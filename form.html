@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.testable.org/assets/css/styles.css?3">
+    <title>Form</title>
+
+    <style>
+        body {
+            background-color: aliceblue;
+            padding-top: 3rem;
+        }
+
+    </style>
+
+</head>
+<body>
+  
+<div class="quick-project-container container" style="display:block">
+	<div class="main clearfix">
+		<form id="nl-form" class="nl-form">
+			<div id="trialBootstrapper"></div>
+			 <div class="nl-submit-wrap">
+				<button class="nl-submit" type="submit">Generate project</button>
+			</div>
+		</form>
+	</div>
+</div><!-- /container -->
+<div id="quick-project-templates" style="display: none">
+	<span id="trialTypeSelector">I want to present <a href="#" data-name="nTrials" data-type="text">nTrials</a> <a href="#" data-name="trialTypeSelector" data-type="select">trialTypeSelector</a>, </span>
+
+	<span id="nStimTemplate" class="line">containing <a href="#" data-name="nStim" data-type="select">nStim</a></span>
+
+	<span id="stimTypeTemplate" class="line"> <a href="#" data-name="stimType" data-type="select" >stimType</a><span> per trial</span></span>
+
+	<span id="stimFormatTemplate"  class="line">, format <a href="#" data-name="stimFormat" data-type="select" >stimFormat</a><span></span></span>
+
+	<span id="stimAudioFormat">, format mp3.</span>
+
+	<span id="stimVideoFormat">, format mp4.</span>
+
+	<span id="presTypePreTemplate">, displayed</span>
+
+	<span id="presTypeTemplate" class="line"> <a href="#" data-name="presType" data-type="select" >presType</a><span></span></span>
+
+	<span id="presTimeType" class="line"> for <a href="#" data-name="presTimeType" data-type="select" >presTimeType</a><span> time</span></span>
+
+	<span id="presTimeEnd">.</span>
+
+	<span id="presTimeSim" class="line"> of <a href="#" data-name="presTime" data-type="text" >presTime</a> ms, and</span>
+
+	<span id="withMask" class="line"> <a href="#" data-name="withMask" data-type="select" >withMask</a><span> mask afterwards.</span></span>
+
+	<span id="nScreensTemplate"> on <a href="#" data-name="nScreens" data-type="select" >nScreens</a> screens</span>
+
+	<span id="presTimeTemplate"> for <a href="#" data-name="presTime" data-type="text" >presTime</a> ms each</span>
+
+	<span id="isiTemplate">, with an interstimulus interval of <a href="#" data-name="isi" data-type="text">isi</a> ms</span>
+
+	<span id="withMaskSeq" class="line">, and <a href="#" data-name="withMask" data-type="select" >withMask</a><span> mask in-between.</span></span>
+
+	<!-- trial text -->
+	<span id="showTrialText" class="line"><span class="separator"></span>I <a href="#" data-name="showTrialText" data-type="select" >showTrialText</a><span> to show a text above the stimuli</span></span>
+
+	<span id="trialText">: <a href="#" data-name="trialText" data-type="text" >trialText</a>.</span>
+
+	<span id="noTrialTextEnd">.</span>
+
+	<!-- responses  -->
+
+	<span id="enableResponses" class="line"><span class="separator"></span>Participants <a href="#" data-name="enableResponses" data-type="select" >enableResponses</a><span> respond</span></span>
+
+	<span id="responseMethod" class="line"> through <a href="#" data-name="responseMethod" data-type="select" >responseMethod</a><span></span></span>
+
+	<span id="keys">: <a href="#" data-name="keys" data-type="text" data-subline="e.g. <em>a,s,d,left,right,space,enter</em>" >keys</a>.</span>
+
+	<span id="buttons"> with labels: <a href="#" data-name="buttons" data-type="text" data-subline="e.g. <em>Left, Right</em>">buttons</a>.</span>
+
+	<span id="responseLengthType" class="line"> a <a href="#" data-name="responseLengthType" data-type="select">responseLengthType</a><span> answer.</span></span>
+
+	<span id="audioVideoResponseTiming" class="line"> Responses are enabled <a href="#" data-name="audioVideoResponseTiming" data-type="select">audioVideoResponseTiming</a><span> playing.</span></span>
+
+	<span id="noResponseEnd">.</span>
+
+	<!-- response window --> 
+	<span id="showResponseWindow" class="line"> There is <a href="#" data-name="showResponseWindow" data-type="select" >showResponseWindow</a><span> time limit</span></span>
+
+	<span id="responseWindow"> of <a href="#" data-name="responseWindow" data-type="text">responseWindow</a> ms.</span>
+
+	<span id="noResponseWindowEnd">.</span>
+
+	<!-- feedback -->
+
+	<span id="hasCorrectResponse" class="line"> There is <a href="#" data-name="hasCorrectResponse" data-type="select">hasCorrectResponse</a><span> correct response defined</span></span>
+
+	<span id="enableFeedbackAfterTrial" class="line">, and participants <a href="#" data-name="enableFeedbackAfterTrial" data-type="select">enableFeedbackAfterTrial</a><span> receive feedback</span></span>
+
+	<span id="feedbackFor"> for <a href="#" data-name="feedbackFor" data-type="select">feedbackFor</a> responses</span>
+
+	<span id="feedbackForSpecific">: <a href="#" data-name="feedbackForSpecific" data-type="select">feedbackForSpecific</a></span>
+
+	<span id="feedbackForSpecificEnd"> only</span>
+
+	<span id="feedbackEnd">.</span>
+
+	<span id="hasCorrectResponseEnd">.</span>
+
+	<!--  randomization -->
+	<span id="shouldRandomize" class="line"> <span class="separator"></span> Trials should be presented in a <a href="#" data-name="shouldRandomize" data-type="select">shouldRandomize</a><span> order.</span></span>
+
+	<!-- trials  -->
+
+	{{-- <span id="trialsInstructions"><span class="separator"></span>I need <a href="#" data-name="nIntructionTrials" data-type="text"></a> screen(s) with instructions</span> --}}
+
+	{{-- <span id="trialsPractice">, <a href="#" data-name="nPracticeTrials" data-type="text"></a> practice trials</span> --}}
+
+	{{-- <span id="trialsMain"> and <a href="#" data-name="nTrials" data-type="text"></a > main trials.</span> --}}
+
+	
+	<!-- form trials form -->
+	<span id="formStimSelector"> containing <a href="#" data-name="formStimSelector" data-type="select">formStimSelector</a>.</span>
+
+	<span id="formCanRespond"><span class="separator"></span>Participants <a href="#" data-name="formCanRespond" data-type="select">formCanRespond</a> respond</span> 
+
+	<span id="cannotRespond">.</span>
+
+	<span id="formResponseType"> through <a href="#" data-name="formResponseType" data-type="select">formResponseType</a></span>
+
+	<span id="formResponseOptions"> with <a href="#" data-name="formResponseOptions" data-type="text">formResponseOptions</a> options</span>
+
+	<span id="formSliderOptions"> from <a href="#" data-name="formSliderStart" data-type="text">formSliderStart</a> to <a href="#" data-name="formSliderEnd" data-type="text">formSliderEnd</a> in steps of <a href="#" data-name="formSliderSteps" data-type="text">formSliderSteps</a>.</span>
+
+	<span id="formResponseRandom"> in a <a href="#" data-name="formResponseRandom" data-type="select">formResponseRandom</a> order.</span>
+
+	<span id="formHasResponseRows"> Questions <a href="#" data-name="formHasResponseRows" data-type="select">formHasResponseRows</a></span>
+
+	<span id="formResponseRows"> <a href="#" data-name="formResponseRows" data-type="text">formResponseRows</a></span>
+
+	<span id="formRowsEnd"> multiple rows.</span>
+
+	<span id="formScreenType"> The questions should be presented on <a href="#" data-name="formScreenType" data-type="select">formScreenType</a></span>
+
+	<span id="formSameScreenDivider"> <a href="#" data-name="formSameScreenDivider" data-type="select">formSameScreenDivider</a> line dividers</span>
+
+	<span id="formRandomize"> in a <a href="#" data-name="formRandomize" data-type="select">formRandomize</a> order</span>
+
+	<span id="formScreenEnd">.</span>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="nlform.js"></script>
+<script src="trial-file-bootstrapper.js"></script>
+</body>
+</html>
